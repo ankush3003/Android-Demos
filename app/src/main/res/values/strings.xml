@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android Demos</string>
+    <string name="tab_text_1">Advanced</string>
+    <string name="tab_text_2">Basics</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
