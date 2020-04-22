@@ -46,4 +46,8 @@ dependencies {
     implementation 'org.koin:koin-core:1.0.2'
     implementation 'org.koin:koin-android:1.0.2'
     implementation 'org.koin:koin-android-viewmodel:1.0.2'
+
+    // Databinding collection adapter
+    implementation "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:3.1.1"
+    implementation "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:3.1.1"
 }

@@ -13,14 +13,15 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.basics.BasicsFragment">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_basics"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{viewmodel.dummyText}"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:orientation="vertical"
+            app:itemBinding="@{viewmodel.accessoryBinding}"
+            app:items="@{viewmodel.topicsList}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_item_topics" />
 
     </RelativeLayout>
 </layout>

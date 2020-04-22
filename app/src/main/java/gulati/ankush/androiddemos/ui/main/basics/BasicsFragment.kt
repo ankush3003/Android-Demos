@@ -28,6 +28,7 @@ class BasicsFragment : Fragment() {
         val mainBinding : FragmentBasicsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_basics, container, false)
 
         mainBinding.viewmodel = basicsViewModel
+        basicsViewModel.initList()
         mainBinding.lifecycleOwner = this
         mainBinding.executePendingBindings()
 
