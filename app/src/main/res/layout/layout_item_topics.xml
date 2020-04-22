@@ -5,15 +5,17 @@
 
     <data>
         <variable
-            name="itemViewModel"
+            name="topic"
             type="gulati.ankush.androiddemos.models.TopicData" />
+        <variable name="listener" type="gulati.ankush.androiddemos.ui.main.OnTopicClickListener"/>
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_8"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        android:onClick="@{() -> listener.onItemClick(topic)}">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_8"
                 android:gravity="center_vertical"
-                android:text="@{itemViewModel.headerText}"
+                android:text="@{topic.headerText}"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -40,7 +42,7 @@
                 android:layout_below="@id/tv_heading"
                 android:layout_marginStart="@dimen/dimen_8"
                 android:gravity="center_vertical"
-                android:text="@{itemViewModel.subHeaderText}"
+                android:text="@{topic.subHeaderText}"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp"
                 tools:text="@string/hello_blank_fragment" />

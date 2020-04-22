@@ -1,4 +1,4 @@
-package gulati.ankush.androiddemos.ui.main.basics
+package gulati.ankush.androiddemos.ui.main.advanced
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,12 +10,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 
 import gulati.ankush.androiddemos.R
+import gulati.ankush.androiddemos.databinding.FragmentAdvancedBinding
 import gulati.ankush.androiddemos.databinding.FragmentBasicsBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class BasicsFragment : Fragment() {
+class AdvancedFragment : Fragment() {
 
-    private val basicsViewModel: BasicsViewModel by viewModel()
+    private val advancedViewModel: AdvancedViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,19 +24,20 @@ class BasicsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val mainBinding : FragmentBasicsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_basics, container, false)
+        val mainBinding : FragmentAdvancedBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_advanced, container, false)
 
-        mainBinding.viewmodel = basicsViewModel
-        basicsViewModel.initList()
+        mainBinding.viewmodel = advancedViewModel
+        advancedViewModel.initList()
         mainBinding.lifecycleOwner = this
         mainBinding.executePendingBindings()
+
         initViews()
 
         return mainBinding.root
     }
 
     private fun initViews() {
-        basicsViewModel.topicClickEvent.observe(viewLifecycleOwner, Observer {
+        advancedViewModel.topicClickEvent.observe(viewLifecycleOwner, Observer {
             Toast.makeText(activity, "Clicked: " + it.headerText, Toast.LENGTH_SHORT).show()
         })
     }
