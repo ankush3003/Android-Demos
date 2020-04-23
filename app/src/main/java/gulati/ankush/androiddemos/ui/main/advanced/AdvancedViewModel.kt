@@ -13,7 +13,7 @@ class AdvancedViewModel : ViewModel(), OnTopicClickListener {
     val topicClickEvent = MutableLiveData<TopicData>()// TODO SingleLiveEvent<String>()
 
     fun initList() {
-        val topic1:TopicData = TopicData("Notifications", "FCM and in-app")
+        val topic1:TopicData = TopicData("Notifications", "1.1 Using Android Notifications \n1.2 Android Firebase Cloud Messaging")
         val topic2:TopicData = TopicData("Notifications", "FCM and in-app")
         val topic3:TopicData = TopicData("Notifications", "FCM and in-app")
 

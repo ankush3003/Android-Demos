@@ -14,6 +14,18 @@ import gulati.ankush.androiddemos.databinding.FragmentAdvancedBinding
 import gulati.ankush.androiddemos.databinding.FragmentBasicsBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
+/**
+ * Advanced android in Kotlin - https://codelabs.developers.google.com/codelabs/advanced-android-kotlin-training-welcome/#1
+ *
+ * Advanced Android in Kotlin includes the following lessons:
+ * Lesson 1: Notifications
+ * Lesson 2: Advanced Graphics
+ * Lesson 3: Animation
+ * Lesson 4: Geo
+ * Lesson 5: Testing and Dependency Injection
+ * Lesson 6: Login
+ */
+
 class AdvancedFragment : Fragment() {
 
     private val advancedViewModel: AdvancedViewModel by viewModel()
