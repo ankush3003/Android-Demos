@@ -1,5 +1,6 @@
 package gulati.ankush.androiddemos.ui.main.advanced
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.lifecycle.Observer
 import gulati.ankush.androiddemos.R
 import gulati.ankush.androiddemos.databinding.FragmentAdvancedBinding
 import gulati.ankush.androiddemos.databinding.FragmentBasicsBinding
+import gulati.ankush.androiddemos.ui.main.advanced.notifications.NotificationMainActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
@@ -50,7 +52,13 @@ class AdvancedFragment : Fragment() {
 
     private fun initViews() {
         advancedViewModel.topicClickEvent.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(activity, "Clicked: " + it.headerText, Toast.LENGTH_SHORT).show()
+            when(it.headerText) {
+                "Notifications" -> {
+                    val intent = Intent(activity, NotificationMainActivity::class.java)
+                    startActivity(intent)
+                }
+                else -> Toast.makeText(activity, "Clicked: " + it.headerText, Toast.LENGTH_SHORT).show()
+            }
         })
     }
 }

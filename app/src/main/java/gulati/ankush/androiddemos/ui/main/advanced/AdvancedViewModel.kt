@@ -14,8 +14,8 @@ class AdvancedViewModel : ViewModel(), OnTopicClickListener {
 
     fun initList() {
         val topic1:TopicData = TopicData("Notifications", "1.1 Using Android Notifications \n1.2 Android Firebase Cloud Messaging")
-        val topic2:TopicData = TopicData("Notifications", "FCM and in-app")
-        val topic3:TopicData = TopicData("Notifications", "FCM and in-app")
+        val topic2:TopicData = TopicData("Notifications1", "FCM and in-app")
+        val topic3:TopicData = TopicData("Notifications2", "FCM and in-app")
 
         topicsList.add(topic1)
         topicsList.add(topic2)
