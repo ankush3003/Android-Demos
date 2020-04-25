@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
 import gulati.ankush.androiddemos.R
+import gulati.ankush.androiddemos.ui.main.MainActivity
 import gulati.ankush.androiddemos.ui.main.advanced.notifications.NotificationMainActivity
 import gulati.ankush.androiddemos.ui.main.advanced.notifications.receiver.SnoozeReceiver
 
@@ -26,6 +27,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
     // Create the content intent for the notification, which launches
     // this activity
     // TODO: Step 1.11 create intent
+    val contentIntent = Intent(applicationContext, MainActivity::class.java)
 
     // TODO: Step 1.12 create PendingIntent
 
@@ -35,10 +37,17 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
 
     // TODO: Step 1.2 get an instance of NotificationCompat.Builder
     // Build the notification
+    val notificationBuilder = NotificationCompat.Builder(
+        applicationContext,
+        applicationContext.getString(R.string.egg_notification_channel_id)
+    )
 
     // TODO: Step 1.8 use the new 'breakfast' notification channel
 
     // TODO: Step 1.3 set title, text and icon to builder
+        .setSmallIcon(R.drawable.cooked_egg)
+        .setContentTitle(applicationContext.getString(R.string.notification_title))
+        .setContentText(messageBody)
 
     // TODO: Step 1.13 set content intent
 
@@ -49,7 +58,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
     // TODO: Step 2.5 set priority
 
     // TODO: Step 1.4 call notify
-
+    notify(NOTIFICATION_ID, notificationBuilder.build())
 }
 
 // TODO: Step 1.14 Cancel all notifications
