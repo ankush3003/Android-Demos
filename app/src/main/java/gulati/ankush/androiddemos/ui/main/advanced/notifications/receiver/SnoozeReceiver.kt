@@ -11,11 +11,14 @@ import android.text.format.DateUtils
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.content.ContextCompat
 
+/**
+ * Handles snooze action on App Notification, setExactAndAllowWhileIdle is used to schedule time for trigger
+ */
 class SnoozeReceiver: BroadcastReceiver() {
     private val REQUEST_CODE = 0
 
     override fun onReceive(context: Context, intent: Intent) {
-        val triggerTime = SystemClock.elapsedRealtime() + DateUtils.MINUTE_IN_MILLIS
+        val triggerTime = SystemClock.elapsedRealtime() + (DateUtils.SECOND_IN_MILLIS * 5)
 
         val notifyIntent = Intent(context, AlarmReceiver::class.java)
         val notifyPendingIntent = PendingIntent.getBroadcast(
@@ -31,6 +34,12 @@ class SnoozeReceiver: BroadcastReceiver() {
             triggerTime,
             notifyPendingIntent
         )
+
+        val notificationManager = ContextCompat.getSystemService(
+            context,
+            NotificationManager::class.java
+        ) as NotificationManager
+        notificationManager.cancelAll()
     }
 
 }

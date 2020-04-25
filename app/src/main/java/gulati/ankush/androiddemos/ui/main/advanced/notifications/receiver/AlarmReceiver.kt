@@ -4,11 +4,13 @@ import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import gulati.ankush.androiddemos.R
 import gulati.ankush.androiddemos.ui.main.advanced.notifications.util.sendNotification
 
+/**
+ * Class receives Alarm trigger from Egg Notification activity And triggers a notification
+ */
 class AlarmReceiver: BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
