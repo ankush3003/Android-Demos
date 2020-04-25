@@ -16,6 +16,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import gulati.ankush.androiddemos.R
 import gulati.ankush.androiddemos.ui.main.advanced.notifications.receiver.AlarmReceiver
+import gulati.ankush.androiddemos.ui.main.advanced.notifications.util.cancelNotifications
 import gulati.ankush.androiddemos.ui.main.advanced.notifications.util.sendNotification
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -117,6 +118,12 @@ class EggTimerViewModel (private val app: Application) : AndroidViewModel(app){
 //                ) as NotificationManager
 //                notificationManager.sendNotification(app.getString(R.string.timer_running), app)
                 // TODO: Step 1.15 call cancel notification
+                val notificationManager =
+                    ContextCompat.getSystemService(
+                        app,
+                        NotificationManager::class.java
+                    ) as NotificationManager
+                notificationManager.cancelNotifications()
 
                 AlarmManagerCompat.setExactAndAllowWhileIdle(
                     alarmManager,
