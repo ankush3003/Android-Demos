@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "586052651411",
+    "firebase_url": "https://android-demos-github.firebaseio.com",
+    "project_id": "android-demos-github",
+    "storage_bucket": "android-demos-github.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586052651411:android:8c7305e0c26f00dc628066",
+        "android_client_info": {
+          "package_name": "gulati.ankush.androiddemos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586052651411-fhef02nmuq19f9v3gb7o1g9kihr5bvtb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoeBQBMEhAyQ9CI-L6vYjh7JNOQrSXRVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586052651411-fhef02nmuq19f9v3gb7o1g9kihr5bvtb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
