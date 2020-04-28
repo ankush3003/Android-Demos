@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import gulati.ankush.androiddemos.R
 import gulati.ankush.androiddemos.databinding.FragmentAdvancedBinding
 import gulati.ankush.androiddemos.databinding.FragmentBasicsBinding
+import gulati.ankush.androiddemos.ui.main.advanced.customviews.CustomViewActivity
 import gulati.ankush.androiddemos.ui.main.advanced.notifications.NotificationMainActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -55,6 +56,10 @@ class AdvancedFragment : Fragment() {
             when(it.headerText) {
                 "Notifications" -> {
                     val intent = Intent(activity, NotificationMainActivity::class.java)
+                    startActivity(intent)
+                }
+                "Advanced Graphics" -> {
+                    val intent = Intent(activity, CustomViewActivity::class.java)
                     startActivity(intent)
                 }
                 else -> Toast.makeText(activity, "Clicked: " + it.headerText, Toast.LENGTH_SHORT).show()
